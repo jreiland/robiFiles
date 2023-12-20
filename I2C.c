@@ -54,7 +54,7 @@ extern void write8(unsigned char reg, unsigned char value){
 	//function.  This code should work, if you get errors, you need
 	//to use the Reason codes returned to check for them.
 
-	unsigned char buf[2];
+	unsigned char buff[2];
 	buff[0] = reg;
 	buff[1] = value;
 	bcm_i2c_write(buff, 2);
