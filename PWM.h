@@ -15,6 +15,7 @@
 #include<stdio.h>
 #include<bcm2835.h>
 #include"I2C.h"
+#include <math.h>
 
 #ifndef PWM
 #define PWM
