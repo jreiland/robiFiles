@@ -19,6 +19,7 @@ extern void initMotors(){
 }
 
 extern void initHat(){
+    i2cInit(0x60);
     PWMInit(0x60);
     setPWMFreq(1600);
 }
