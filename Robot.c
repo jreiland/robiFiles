@@ -17,15 +17,15 @@ extern void setRightSpeed(int speed){
 }
 
 extern void stop(){
-    run(RELEASE, motors[1]);    //left motor off
-    run(RELEASE, motors[2]);    //right motor off
+    run(RELEASE, 1);    //left motor off
+    run(RELEASE, 2);    //right motor off
 }
 
 extern void forward(int speed, int seconds){
     setLeftSpeed(speed);
     setRightSpeed(speed);
-    run(FORWARD, motors[1]);    //left motor forward
-    run(FORWARD, motors[2]);    //right motor forward
+    run(FORWARD, 1);    //left motor forward
+    run(FORWARD, 2);    //right motor forward
     if (seconds > 0){   //definite
         sleep(seconds);
         stop();
@@ -35,8 +35,8 @@ extern void forward(int speed, int seconds){
 extern void backward(int speed, int seconds){
     setLeftSpeed(speed);
     setRightSpeed(speed);
-    run(BACKWARD, motors[1]);    //left motor backward
-    run(BACKWARD, motors[2]);    //right motor backward
+    run(BACKWARD, 1);    //left motor backward
+    run(BACKWARD, 2);    //right motor backward
     if (seconds > 0){   //definite
         sleep(seconds);
         stop();
@@ -46,8 +46,8 @@ extern void backward(int speed, int seconds){
 extern void right(int speed, int seconds){
     setLeftSpeed(speed);
     setRightSpeed(speed);
-    run(FORWARD, motors[1]);    //left motor forward
-    run(BACKWARD, motors[2]);    //right motor backward
+    run(FORWARD, 1);    //left motor forward
+    run(BACKWARD, 2);    //right motor backward
     if (seconds > 0){   //definite
         sleep(seconds);
         stop();
@@ -57,8 +57,8 @@ extern void right(int speed, int seconds){
 extern void left(int speed, int seconds){
     setLeftSpeed(speed);
     setRightSpeed(speed);
-    run(BACKWARD, motors[1]);    //left motor backward
-    run(FORWARD, motors[2]);    //right motor forward
+    run(BACKWARD, 1);    //left motor backward
+    run(FORWARD, 2);    //right motor forward
     if (seconds > 0){   //definite
         sleep(seconds);
         stop();
