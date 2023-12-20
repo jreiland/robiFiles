@@ -23,13 +23,13 @@ extern void PWMInit(unsigned int address){
 extern void setPWMFreq(int freq){
     float preScaleVal = 25000000.0; //25 mhz
     preScaleVal /= 4096.0;
-    preScaleVal = preScaleVal / float(freq);
+    preScaleVal /= (float)freq;
     preScaleVal -= 1.0;
     float preScale = floorf(preScaleVal + 0.5);
     unsigned int oldMode = readU8(__MODE1);
     unsigned int newMode = readU8(oldMode & 0x7F) | 0x10; //sleep
     write8(__MODE1, newMode);
-    write8(__PRESCALE, unsigned int(floorf(preScale)));
+    write8(__PRESCALE, (int)floorf(preScale));
     write8(__MODE1, oldMode);
     usleep(5000);
     write8(__MODE1, oldMode | 0x80);
