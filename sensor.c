@@ -7,7 +7,8 @@
 // #define ECHO RPI_V2_GPIO_P1_18
 // #define TRIG RPI_V2_GPIO_P1_16
 
-#include "Robot.h"
+#include "Sensor.h"
+
 
 extern double get_time()
 {
