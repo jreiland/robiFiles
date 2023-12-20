@@ -57,7 +57,7 @@ extern void write8(unsigned char reg, unsigned char value){
 	unsigned char buff[2];
 	buff[0] = reg;
 	buff[1] = value;
-	bcm_i2c_write(buff, 2);
+	bcm2835_i2c_write(buff, 2);
 
 }
 

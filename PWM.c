@@ -3,7 +3,7 @@
 #include <math.h>
 
 extern void setAllPWM(int on, int off){
-    write8(__ALL_LED_ON_L, on & OxFF);
+    write8(__ALL_LED_ON_L, on & 0xFF);
     write8(__ALL_LED_ON_H, on >> 8);
     write8(__ALL_LED_OFF_L, off & 0xFF);
     write8(__ALL_LED_OFF_H, off >> 8);
