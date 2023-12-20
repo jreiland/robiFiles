@@ -2,8 +2,8 @@
 
 extern void robotInit(){
     initHat();
-    run(RELEASE, motors[1]);    //left motor off
-    run(RELEASE, motors[2]);    //right motor off
+    run(RELEASE, 1);    //left motor off
+    run(RELEASE, 2);    //right motor off
 }
 
 extern void setLeftSpeed(int speed){
