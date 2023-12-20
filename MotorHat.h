@@ -27,6 +27,8 @@ void initMotors();
 
 void initHat();
 
+void setSpeed(int pin, int speed);
+
 void run(unsigned char command, unsigned char motorID);
 
 void setPin(unsigned char pin, unsigned char value);

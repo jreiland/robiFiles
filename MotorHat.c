@@ -23,6 +23,11 @@ extern void initHat(){
     setPWMFreq(1600);
 }
 
+extern void setSpeed(int pin, int speed){
+    //add error checking later
+    setPWM(pin, 0, speed*16);
+}
+
 extern void run(unsigned char command, unsigned char motorID){
     if (command == FORWARD){
         setPin(motors[motorID].in2, 0);
