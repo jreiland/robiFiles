@@ -2,6 +2,7 @@
 
 extern void robotInit(){
     initHat();
+    initMotors();
     run(RELEASE, 1);    //left motor off
     run(RELEASE, 2);    //right motor off
 }
