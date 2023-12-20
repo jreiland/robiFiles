@@ -25,7 +25,6 @@ extern void setPWMFreq(int freq){
     preScaleVal /= 4096.0;
     preScaleVal /= (float)freq;
     preScaleVal -= 1.0;
-    floor
     float preScale = floorf(preScaleVal + 0.5);
     unsigned int oldMode = readU8(__MODE1);
     unsigned int newMode = readU8(oldMode & 0x7F) | 0x10; //sleep
