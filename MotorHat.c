@@ -1,6 +1,6 @@
 #include "MotorHat.h"
 
-extern void initMotors(){
+extern void initMotors(){   //initialize motors
     motors[0].pwm = 8;
     motors[0].in2 = 9;
     motors[0].in1 = 10;
@@ -18,18 +18,17 @@ extern void initMotors(){
     motors[3].in1 = 5;
 }
 
-extern void initHat(){
+extern void initHat(){  //initialize i2c and PWM
     i2cInit(0x60);
     PWMInit(0x60);
     setPWMFreq(1600);
 }
 
 extern void setSpeed(int pin, int speed){
-    //add error checking later
     setPWM(pin, 0, speed*16);
 }
 
-extern void run(unsigned char command, unsigned char motorID){
+extern void run(unsigned char command, unsigned char motorID){  //set up FORWARD, BACKWARD, and RELEASE commands
     if (command == FORWARD){
         setPin(motors[motorID].in2, 1);
         setPin(motors[motorID].in1, 0);
@@ -44,8 +43,7 @@ extern void run(unsigned char command, unsigned char motorID){
     }
 }
 
-extern void setPin(unsigned char pin, unsigned char value){
-    //add error checking later
+extern void setPin(unsigned char pin, unsigned char value){ //to set correct motor pin
     if (value == 0){
         setPWM(pin, 0, 4096);
     }

@@ -7,22 +7,22 @@ extern void robotInit(){
     run(RELEASE, 1);    //right motor off
 }
 
-extern void setLeftSpeed(int speed){
+extern void setLeftSpeed(int speed){    //set speed to go left
     //add error checking later
     setSpeed(motors[0].pwm, speed);
 }
 
-extern void setRightSpeed(int speed){
+extern void setRightSpeed(int speed){   //set speed to go right
     //add error checking later
     setSpeed(motors[1].pwm, speed);
 }
 
-extern void stop(){
+extern void stop(){ //stop robot
     run(RELEASE, 0);    //left motor off
     run(RELEASE, 1);    //right motor off
 }
 
-extern void forward(int speed, int seconds){
+extern void forward(int speed, int seconds){    //go forward
     setLeftSpeed(speed);
     setRightSpeed(speed);
     run(FORWARD, 0);    //left motor forward
@@ -33,7 +33,7 @@ extern void forward(int speed, int seconds){
     }
 }
 
-extern void backward(int speed, int seconds){
+extern void backward(int speed, int seconds){   //go backward
     setLeftSpeed(speed);
     setRightSpeed(speed);
     run(BACKWARD, 0);    //left motor backward
@@ -44,7 +44,7 @@ extern void backward(int speed, int seconds){
     }
 }
 
-extern void right(int speed, int seconds){
+extern void right(int speed, int seconds){  //turn right
     setLeftSpeed(speed);
     setRightSpeed(speed);
     run(FORWARD, 0);    //left motor forward
@@ -55,7 +55,7 @@ extern void right(int speed, int seconds){
     }
 }
 
-extern void left(int speed, int seconds){
+extern void left(int speed, int seconds){   //turn left
     setLeftSpeed(speed);
     setRightSpeed(speed);
     run(BACKWARD, 0);    //left motor backward

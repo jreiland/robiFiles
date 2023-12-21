@@ -7,11 +7,7 @@
 
 #define BUFFERSIZE 4096
 
-
-
 extern int i2cInit(int address){
-
-	//i2c initialization should also go here.
 	
 	//Initialize the GPIO headers
 	if (!bcm2835_init())
@@ -21,8 +17,7 @@ extern int i2cInit(int address){
     	}//if bcm_init
 	
 	//Prepare the hat for i2c communication
-	if (!bcm2835_i2c_begin())
-    	{
+	if (!bcm2835_i2c_begin()){
 		printf("bcm2835_i2c_begin failed. Are you running as root??\n");
 		return 1;
 	}//if i2c_begin
@@ -30,8 +25,6 @@ extern int i2cInit(int address){
 	//Set the address of the hat you are communicating with 
 	bcm2835_i2c_setSlaveAddress(address); //set HAT address to 0x41 for servo
 	return 0;
-	
-	
 }
 
 /*
@@ -40,7 +33,7 @@ the bcm2835 library.  The documentation on this function
 can be found on the Internet.  You will be using the 
 bcm2835_i2c_write() function.  This function requires a 2 byte
 unsigned character array.  The 0th element of the array will hold
-the register addres and the 1st element of the array will hold the 
+the register address and the 1st element of the array will hold the 
 value you wish to store.  Reason codes are returned, using this function
 Students need to handle these reason codes for error checking.
 
@@ -71,8 +64,6 @@ Return values of this function should be handled (for error checking)
 */
 
 unsigned int readU8(unsigned char reg){
-	//Code for this function is left to the student.
-
 	
 	//Error checking should be done for the completion of this
 	//function.  This code should work, if you get errors, you need
@@ -81,6 +72,5 @@ unsigned int readU8(unsigned char reg){
 	buff[0] = reg;
 	bcm2835_i2c_read(buff, 2);
 	return buff[0];
-
 }
 
