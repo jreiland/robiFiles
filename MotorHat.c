@@ -31,12 +31,12 @@ extern void setSpeed(int pin, int speed){
 
 extern void run(unsigned char command, unsigned char motorID){
     if (command == FORWARD){
-        setPin(motors[motorID].in2, 0);
-        setPin(motors[motorID].in1, 1);
-    }
-    else if (command == BACKWARD){
         setPin(motors[motorID].in2, 1);
         setPin(motors[motorID].in1, 0);
+    }
+    else if (command == BACKWARD){
+        setPin(motors[motorID].in2, 0);
+        setPin(motors[motorID].in1, 1);
     }
     else if (command == RELEASE){
         setPin(motors[motorID].in2, 0);
