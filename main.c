@@ -36,13 +36,13 @@ int main(int argc, char *argv[]){
     while (1){
                
 
-        printf("Set TRIG to true\n");
+        //printf("Set TRIG to true\n");
 
-        bcm2835_gpio_write(TRIG,HIGH);
+        //bcm2835_gpio_write(TRIG,HIGH);
 
-        printf("Sleep\n");
+        //printf("Sleep\n");
 
-        bcm2835_delayMicroseconds(10);
+        //bcm2835_delayMicroseconds(10);
 
         printf("Set TRIG to false\n");
 
