@@ -53,14 +53,14 @@ int main(int argc, char *argv[]){
         while (bcm2835_gpio_lev(ECHO)==0)
             pulse_start = get_time();//get the time in microseconds
 
-        printf("pulse start: %Lf\n",pulse_start);
+        //printf("pulse start: %Lf\n",pulse_start);
 
-        printf("Second while loop\n");
+        //printf("Second while loop\n");
 
         while(bcm2835_gpio_lev(ECHO)==1)
             pulse_end = get_time();//get the time in micorseconds
 
-        printf("pulse end:%Lf\n",pulse_end);
+        //printf("pulse end:%Lf\n",pulse_end);
 
         //pulse_duration = (double)(pulse_end - pulse_start)/CLOCKS_PER_SEC;
         //CLOCKS_PER_SEC is equal to 1000000 on the raspberry pi.
@@ -68,13 +68,13 @@ int main(int argc, char *argv[]){
 
         pulse_duration = (pulse_end - pulse_start)/1000000;
 
-        printf("pulse duration:%Lf\n",pulse_duration);
+        //printf("pulse duration:%Lf\n",pulse_duration);
 
         distance = pulse_duration * 17150;
 
         printf("Distance:%.2f cm\n",distance);
 
-        if (distance < 5 || distance > 1200){
+        if (distance < 8 || distance > 1200){
             stop();
             backward(50, 2);
             stop();
