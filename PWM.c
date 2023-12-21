@@ -9,7 +9,7 @@ extern void setAllPWM(int on, int off){
     write8(__ALL_LED_OFF_H, off >> 8);
 }
 
-extern void PWMInit(unsigned int address){
+extern void PWMInit(unsigned int address){  //initialize PWM at address
     setAllPWM(0, 0);
     write8(__MODE2, __OUTDRV);
     write8(__MODE1, __ALLCALL);
@@ -20,7 +20,7 @@ extern void PWMInit(unsigned int address){
     usleep(5000);
 }
 
-extern void setPWMFreq(int freq){
+extern void setPWMFreq(int freq){   //set PWM for given frequency
     float preScaleVal = 25000000.0; //25 mhz
     preScaleVal /= 4096.0;
     preScaleVal /= (float)freq;
@@ -35,7 +35,7 @@ extern void setPWMFreq(int freq){
     write8(__MODE1, oldMode | 0x80);
 }
 
-extern void setPWM(int channel, int on, int off){
+extern void setPWM(int channel, int on, int off){   //set PWM channel
     write8(__LED0_ON_L+4*channel, on & 0xFF);
     write8(__LED0_ON_H+4*channel, on >> 8);
     write8(__LED0_OFF_L+4*channel, off & 0xFF);
