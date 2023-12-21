@@ -5,21 +5,6 @@
 int main(int argc, char *argv[]){
     robotInit();
 
-    // printf("execute forward\n");
-    // forward(100, 2);
-
-    // printf("execute left\n");
-    // left(100, 2);
-
-    // printf("execute backward\n");
-    // backward(100, 2);
-
-    // printf("execute right\n");
-    // right(100, 2);
-
-    // printf("execute forward2\n");
-    // forward(100, 2);
-
     double pulse_start, pulse_end, pulse_duration;
     double distance;
 
@@ -78,15 +63,18 @@ int main(int argc, char *argv[]){
 
         printf("Distance:%.2f cm\n",distance);
 
-        if (distance < 10){
+        if (distance < 8){
             //stop();
+            printf("going backward\n");
             backward(50, 2);
             //stop();
-            right(3, 2);
+            printf("turning right\n");
+            right(5, 2);
             //stop();
             continue;
         }
         else{
+            printf("going forward\n");
             forward(100, -1);
         }
     }
