@@ -78,9 +78,9 @@ int main(int argc, char *argv[]){
 
         if (distance < 5 || distance > 1000){
             stop();
-            backward(50, 1);
+            backward(50, 2);
             stop();
-            right(2, 1);
+            right(3, 2);
             stop();
             continue;
         }
