@@ -6,19 +6,19 @@ int main(int argc, char *argv[]){
     robotInit();
 
     printf("execute forward\n");
-    forward(50, 10);
+    forward(100, 10);
 
     printf("execute left\n");
-    left(10, 2);
+    left(100, 10);
 
     printf("execute backward\n");
-    backward(60, 1);
+    backward(100, 10);
 
     printf("execute right\n");
-    right(10, 5);
+    right(100, 10);
 
     printf("execute forward2\n");
-    forward(100, 3);
+    forward(100, 10);
 
     stop();
 }
