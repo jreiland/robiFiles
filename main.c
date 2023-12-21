@@ -29,16 +29,16 @@ int main(int argc, char *argv[]){
 
     //bcm2835_gpio_write(TRIG,LOW);
 
-    //printf("Waiting for sensor to settle\n");
+    printf("Waiting for sensor to settle\n");
 
-    //bcm2835_delay(2000); 
+    bcm2835_delay(2000); 
 
     while (1){
         bcm2835_gpio_write(TRIG,LOW);
 
-        printf("Waiting for sensor to settle\n");
+        //printf("Waiting for sensor to settle\n");
 
-        bcm2835_delay(2000);      
+        //bcm2835_delay(2000);      
 
         printf("Set TRIG to true\n");
 
