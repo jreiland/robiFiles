@@ -79,11 +79,11 @@ int main(int argc, char *argv[]){
         printf("Distance:%.2f cm\n",distance);
 
         if (distance < 10){
-            stop();
+            //stop();
             backward(50, 2);
-            stop();
+            //stop();
             right(3, 2);
-            stop();
+            //stop();
             continue;
         }
         else{
