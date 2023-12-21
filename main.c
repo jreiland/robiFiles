@@ -66,7 +66,7 @@ int main(int argc, char *argv[]){
         if (distance < 8){
             //stop();
             printf("going backward\n");
-            backward(50, 2);
+            backward(100, 2);
             //stop();
             printf("turning right\n");
             right(5, 2);
