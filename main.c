@@ -27,11 +27,11 @@ int main(int argc, char *argv[]){
     bcm2835_gpio_fsel(ECHO, BCM2835_GPIO_FSEL_INPT);
     bcm2835_gpio_fsel(TRIG, BCM2835_GPIO_FSEL_OUTP);
 
-    bcm2835_gpio_write(TRIG,LOW);
+    //bcm2835_gpio_write(TRIG,LOW);
 
-    printf("Waiting for sensor to settle\n");
+    //printf("Waiting for sensor to settle\n");
 
-    bcm2835_delay(2000); 
+    //bcm2835_delay(2000); 
 
     while (1){
         bcm2835_gpio_write(TRIG,LOW);
