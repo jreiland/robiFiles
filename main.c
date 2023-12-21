@@ -69,7 +69,7 @@ int main(int argc, char *argv[]){
             backward(100, 2);
             //stop();
             printf("turning right\n");
-            right(5, 2);
+            right(100, 2);
             //stop();
             continue;
         }
