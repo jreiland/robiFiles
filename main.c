@@ -78,7 +78,7 @@ int main(int argc, char *argv[]){
 
         printf("Distance:%.2f cm\n",distance);
 
-        if (distance < 8 || distance > 1200){
+        if (distance < 10){
             stop();
             backward(50, 2);
             stop();
